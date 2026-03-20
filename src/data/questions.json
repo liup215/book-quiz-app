@@ -1,0 +1,920 @@
+{
+  "questions": {
+    "1": {
+      "ch1": [
+        {
+          "id": "q1-1-1",
+          "type": "single",
+          "question": "JavaScript最初是由哪家公司开发的？",
+          "options": [
+            { "id": "A", "text": "Microsoft" },
+            { "id": "B", "text": "Netscape" },
+            { "id": "C", "text": "Sun Microsystems" },
+            { "id": "D", "text": "Google" }
+          ],
+          "answer": ["B"],
+          "explanation": "JavaScript最初由Netscape公司的Brendan Eich在1995年开发，最初命名为LiveScript，后来改名为JavaScript。"
+        },
+        {
+          "id": "q1-1-2",
+          "type": "single",
+          "question": "JavaScript是一种什么类型的语言？",
+          "options": [
+            { "id": "A", "text": "编译型语言" },
+            { "id": "B", "text": "解释型语言" },
+            { "id": "C", "text": "汇编语言" },
+            { "id": "D", "text": "机器语言" }
+          ],
+          "answer": ["B"],
+          "explanation": "JavaScript是一种解释型语言，代码在运行时由JavaScript引擎逐行解释执行。"
+        },
+        {
+          "id": "q1-1-3",
+          "type": "boolean",
+          "question": "JavaScript只能在浏览器中运行。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["B"],
+          "explanation": "JavaScript不仅可以在浏览器中运行，还可以通过Node.js在服务器端运行，以及其他JavaScript运行时环境。"
+        },
+        {
+          "id": "q1-1-4",
+          "type": "single",
+          "question": "ECMAScript是什么？",
+          "options": [
+            { "id": "A", "text": "JavaScript的浏览器实现" },
+            { "id": "B", "text": "JavaScript的标准规范" },
+            { "id": "C", "text": "JavaScript的编译器" },
+            { "id": "D", "text": "JavaScript的调试工具" }
+          ],
+          "answer": ["B"],
+          "explanation": "ECMAScript是JavaScript的标准规范，定义了JavaScript语言的语法和特性。"
+        },
+        {
+          "id": "q1-1-5",
+          "type": "multiple",
+          "question": "以下哪些是JavaScript的基本数据类型？",
+          "options": [
+            { "id": "A", "text": "Number" },
+            { "id": "B", "text": "String" },
+            { "id": "C", "text": "Array" },
+            { "id": "D", "text": "Boolean" }
+          ],
+          "answer": ["A", "B", "D"],
+          "explanation": "JavaScript的基本数据类型包括：Number、String、Boolean、Null、Undefined、Symbol和BigInt。Array是对象类型，不是基本数据类型。"
+        }
+      ],
+      "ch2": [
+        {
+          "id": "q1-2-1",
+          "type": "single",
+          "question": "以下哪个关键字声明的变量具有块级作用域？",
+          "options": [
+            { "id": "A", "text": "var" },
+            { "id": "B", "text": "let" },
+            { "id": "C", "text": "function" },
+            { "id": "D", "text": "以上都不是" }
+          ],
+          "answer": ["B"],
+          "explanation": "let和const声明的变量具有块级作用域，而var声明的变量具有函数作用域。"
+        },
+        {
+          "id": "q1-2-2",
+          "type": "single",
+          "question": "变量提升（Hoisting）会影响以下哪个关键字声明的变量？",
+          "options": [
+            { "id": "A", "text": "var" },
+            { "id": "B", "text": "let" },
+            { "id": "C", "text": "const" },
+            { "id": "D", "text": "以上全部" }
+          ],
+          "answer": ["A"],
+          "explanation": "var声明的变量会被提升到函数或全局作用域的顶部，而let和const虽然也会被提升，但会进入暂时性死区（TDZ），在声明前访问会报错。"
+        },
+        {
+          "id": "q1-2-3",
+          "type": "boolean",
+          "question": "在严格模式下，未声明的变量赋值会报错。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "在严格模式（'use strict'）下，给未声明的变量赋值会抛出ReferenceError错误。"
+        },
+        {
+          "id": "q1-2-4",
+          "type": "multiple",
+          "question": "以下关于const的说法正确的是？",
+          "options": [
+            { "id": "A", "text": "const声明的变量不能重新赋值" },
+            { "id": "B", "text": "const声明的对象属性可以修改" },
+            { "id": "C", "text": "const声明时必须初始化" },
+            { "id": "D", "text": "const具有块级作用域" }
+          ],
+          "answer": ["A", "B", "C", "D"],
+          "explanation": "const声明的变量不能重新赋值，但如果是对象，其属性可以修改；const声明时必须初始化；const具有块级作用域。"
+        },
+        {
+          "id": "q1-2-5",
+          "type": "single",
+          "question": "以下代码的输出是什么？\n\n```javascript\nvar x = 10;\nfunction foo() {\n  console.log(x);\n  var x = 20;\n}\nfoo();\n```",
+          "options": [
+            { "id": "A", "text": "10" },
+            { "id": "B", "text": "20" },
+            { "id": "C", "text": "undefined" },
+            { "id": "D", "text": "报错" }
+          ],
+          "answer": ["C"],
+          "explanation": "由于变量提升，函数内部的var x会被提升到函数顶部，但赋值不会提升，所以console.log(x)输出undefined。"
+        }
+      ],
+      "ch3": [
+        {
+          "id": "q1-3-1",
+          "type": "single",
+          "question": "闭包是指什么？",
+          "options": [
+            { "id": "A", "text": "一个函数内部定义的函数" },
+            { "id": "B", "text": "能够访问外部函数作用域的函数" },
+            { "id": "C", "text": "一个立即执行函数" },
+            { "id": "D", "text": "一个递归函数" }
+          ],
+          "answer": ["B"],
+          "explanation": "闭包是指有权访问另一个函数作用域中的变量的函数，即使外部函数已经执行完毕。"
+        },
+        {
+          "id": "q1-3-2",
+          "type": "single",
+          "question": "以下代码中，this指向什么？\n\n```javascript\nconst obj = {\n  name: 'John',\n  sayHi: function() {\n    console.log(this.name);\n  }\n};\nobj.sayHi();\n```",
+          "options": [
+            { "id": "A", "text": "window对象" },
+            { "id": "B", "text": "obj对象" },
+            { "id": "C", "text": "sayHi函数" },
+            { "id": "D", "text": "undefined" }
+          ],
+          "answer": ["B"],
+          "explanation": "当函数作为对象的方法被调用时，this指向该对象。所以obj.sayHi()中的this指向obj。"
+        },
+        {
+          "id": "q1-3-3",
+          "type": "boolean",
+          "question": "箭头函数中的this是在定义时确定的，而不是在调用时。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "箭头函数没有自己的this，它会捕获其所在上下文的this值，这个值在函数定义时就已经确定。"
+        },
+        {
+          "id": "q1-3-4",
+          "type": "multiple",
+          "question": "以下哪些方法可以改变this的指向？",
+          "options": [
+            { "id": "A", "text": "call()" },
+            { "id": "B", "text": "apply()" },
+            { "id": "C", "text": "bind()" },
+            { "id": "D", "text": "slice()" }
+          ],
+          "answer": ["A", "B", "C"],
+          "explanation": "call()、apply()和bind()都可以显式地指定函数执行时的this值。slice()是数组方法，与this无关。"
+        },
+        {
+          "id": "q1-3-5",
+          "type": "single",
+          "question": "以下代码的输出是什么？\n\n```javascript\nfor (var i = 0; i < 3; i++) {\n  setTimeout(() => console.log(i), 100);\n}\n```",
+          "options": [
+            { "id": "A", "text": "0, 1, 2" },
+            { "id": "B", "text": "3, 3, 3" },
+            { "id": "C", "text": "undefined, undefined, undefined" },
+            { "id": "D", "text": "报错" }
+          ],
+          "answer": ["B"],
+          "explanation": "由于var声明的变量没有块级作用域，setTimeout的回调函数共享同一个i，当定时器执行时，循环已经结束，i的值为3。"
+        }
+      ],
+      "ch4": [
+        {
+          "id": "q1-4-1",
+          "type": "single",
+          "question": "JavaScript中，每个对象都有一个什么属性指向其原型？",
+          "options": [
+            { "id": "A", "text": "prototype" },
+            { "id": "B", "text": "__proto__" },
+            { "id": "C", "text": "constructor" },
+            { "id": "D", "text": "super" }
+          ],
+          "answer": ["B"],
+          "explanation": "每个JavaScript对象（除null外）都有一个__proto__属性（标准方式是Object.getPrototypeOf()），指向该对象的原型。"
+        },
+        {
+          "id": "q1-4-2",
+          "type": "single",
+          "question": "以下哪种方式可以创建对象？",
+          "options": [
+            { "id": "A", "text": "对象字面量" },
+            { "id": "B", "text": "构造函数" },
+            { "id": "C", "text": "Object.create()" },
+            { "id": "D", "text": "以上全部" }
+          ],
+          "answer": ["D"],
+          "explanation": "JavaScript中有多种创建对象的方式：对象字面量{}、构造函数new、Object.create()方法，以及ES6的class。"
+        },
+        {
+          "id": "q1-4-3",
+          "type": "boolean",
+          "question": "JavaScript中的类（class）是原型继承的语法糖。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "ES6的class本质上是基于原型继承的语法糖，它让面向对象编程的写法更加清晰和易于理解。"
+        },
+        {
+          "id": "q1-4-4",
+          "type": "multiple",
+          "question": "以下关于原型链的说法正确的是？",
+          "options": [
+            { "id": "A", "text": "原型链的终点是null" },
+            { "id": "B", "text": "对象可以访问原型上的属性和方法" },
+            { "id": "C", "text": "原型链用于实现继承" },
+            { "id": "D", "text": "所有对象都直接继承自Object.prototype" }
+          ],
+          "answer": ["A", "B", "C"],
+          "explanation": "原型链的终点是null；对象可以访问原型链上的属性和方法；原型链是JavaScript实现继承的机制。但并非所有对象都直接继承自Object.prototype，例如Object.prototype本身。"
+        },
+        {
+          "id": "q1-4-5",
+          "type": "single",
+          "question": "以下代码中，instanceof操作符检查的是什么？\n\n```javascript\nobj instanceof Constructor\n```",
+          "options": [
+            { "id": "A", "text": "obj的原型链中是否存在Constructor.prototype" },
+            { "id": "B", "text": "obj是否由Constructor直接创建" },
+            { "id": "C", "text": "obj和Constructor是否是同一个对象" },
+            { "id": "D", "text": "Constructor是否是obj的构造函数" }
+          ],
+          "answer": ["A"],
+          "explanation": "instanceof操作符检查的是对象的原型链中是否存在构造函数的prototype属性。"
+        }
+      ],
+      "ch5": [
+        {
+          "id": "q1-5-1",
+          "type": "single",
+          "question": "Promise的哪个状态表示操作成功完成？",
+          "options": [
+            { "id": "A", "text": "pending" },
+            { "id": "B", "text": "fulfilled" },
+            { "id": "C", "text": "rejected" },
+            { "id": "D", "text": "resolved" }
+          ],
+          "answer": ["B"],
+          "explanation": "Promise有三种状态：pending（进行中）、fulfilled（已成功）和rejected（已失败）。"
+        },
+        {
+          "id": "q1-5-2",
+          "type": "single",
+          "question": "async函数返回的是什么？",
+          "options": [
+            { "id": "A", "text": "一个Promise对象" },
+            { "id": "B", "text": "一个普通值" },
+            { "id": "C", "text": "undefined" },
+            { "id": "D", "text": "一个回调函数" }
+          ],
+          "answer": ["A"],
+          "explanation": "async函数总是返回一个Promise对象。如果函数返回一个值，该值会被包装在一个resolved的Promise中。"
+        },
+        {
+          "id": "q1-5-3",
+          "type": "boolean",
+          "question": "await关键字只能在async函数内部使用。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["B"],
+          "explanation": "在ES2018之后，await也可以在模块的顶层使用（顶层await），不限于async函数内部。"
+        },
+        {
+          "id": "q1-5-4",
+          "type": "multiple",
+          "question": "以下哪些是Promise的静态方法？",
+          "options": [
+            { "id": "A", "text": "Promise.all()" },
+            { "id": "B", "text": "Promise.race()" },
+            { "id": "C", "text": "Promise.allSettled()" },
+            { "id": "D", "text": "Promise.any()" }
+          ],
+          "answer": ["A", "B", "C", "D"],
+          "explanation": "这些都是Promise的静态方法：Promise.all()等待所有Promise完成，Promise.race()返回最快完成的Promise，Promise.allSettled()等待所有Promise结束（无论成功失败），Promise.any()返回第一个成功的Promise。"
+        },
+        {
+          "id": "q1-5-5",
+          "type": "single",
+          "question": "以下代码的输出顺序是什么？\n\n```javascript\nconsole.log('1');\nsetTimeout(() => console.log('2'), 0);\nPromise.resolve().then(() => console.log('3'));\nconsole.log('4');\n```",
+          "options": [
+            { "id": "A", "text": "1, 2, 3, 4" },
+            { "id": "B", "text": "1, 4, 3, 2" },
+            { "id": "C", "text": "1, 4, 2, 3" },
+            { "id": "D", "text": "1, 3, 4, 2" }
+          ],
+          "answer": ["B"],
+          "explanation": "执行顺序：同步代码（1, 4）→ 微任务队列（Promise.then，输出3）→ 宏任务队列（setTimeout，输出2）。所以顺序是1, 4, 3, 2。"
+        }
+      ]
+    },
+    "2": {
+      "ch1": [
+        {
+          "id": "q2-1-1",
+          "type": "single",
+          "question": "Vue.js的第一个版本发布于哪一年？",
+          "options": [
+            { "id": "A", "text": "2013" },
+            { "id": "B", "text": "2014" },
+            { "id": "C", "text": "2015" },
+            { "id": "D", "text": "2016" }
+          ],
+          "answer": ["B"],
+          "explanation": "Vue.js由尤雨溪（Evan You）创建，第一个版本于2014年2月发布。"
+        },
+        {
+          "id": "q2-1-2",
+          "type": "single",
+          "question": "Vue 3的响应式系统是基于什么实现的？",
+          "options": [
+            { "id": "A", "text": "Object.defineProperty" },
+            { "id": "B", "text": "Proxy" },
+            { "id": "C", "text": "Reflect" },
+            { "id": "D", "text": "Observer" }
+          ],
+          "answer": ["B"],
+          "explanation": "Vue 3使用ES6的Proxy对象来实现响应式系统，相比Vue 2的Object.defineProperty，Proxy可以监听更多操作。"
+        },
+        {
+          "id": "q2-1-3",
+          "type": "boolean",
+          "question": "Vue 3完全兼容Vue 2的Options API。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "Vue 3完全支持Vue 2的Options API，同时也引入了Composition API，开发者可以根据需要选择使用。"
+        },
+        {
+          "id": "q2-1-4",
+          "type": "multiple",
+          "question": "Vue 3相比Vue 2有哪些改进？",
+          "options": [
+            { "id": "A", "text": "更好的TypeScript支持" },
+            { "id": "B", "text": "更小的包体积" },
+            { "id": "C", "text": "更快的渲染性能" },
+            { "id": "D", "text": "Composition API" }
+          ],
+          "answer": ["A", "B", "C", "D"],
+          "explanation": "Vue 3带来了多项改进：更好的TypeScript支持、更小的包体积、更快的渲染性能，以及全新的Composition API。"
+        },
+        {
+          "id": "q2-1-5",
+          "type": "single",
+          "question": "Vue的核心理念是什么？",
+          "options": [
+            { "id": "A", "text": "命令式编程" },
+            { "id": "B", "text": "声明式编程" },
+            { "id": "C", "text": "函数式编程" },
+            { "id": "D", "text": "面向对象编程" }
+          ],
+          "answer": ["B"],
+          "explanation": "Vue采用声明式编程范式，开发者只需要描述UI应该是什么样子，Vue会自动处理DOM更新。"
+        }
+      ],
+      "ch2": [
+        {
+          "id": "q2-2-1",
+          "type": "single",
+          "question": "Vue 3中，哪个函数用于创建响应式对象？",
+          "options": [
+            { "id": "A", "text": "ref" },
+            { "id": "B", "text": "reactive" },
+            { "id": "C", "text": "computed" },
+            { "id": "D", "text": "watch" }
+          ],
+          "answer": ["B"],
+          "explanation": "reactive函数用于创建响应式对象，而ref用于创建响应式的基本类型值。"
+        },
+        {
+          "id": "q2-2-2",
+          "type": "single",
+          "question": "ref返回的对象需要通过什么属性访问值？",
+          "options": [
+            { "id": "A", "text": "value" },
+            { "id": "B", "text": "data" },
+            { "id": "C", "text": "content" },
+            { "id": "D", "text": "直接访问" }
+          ],
+          "answer": ["A"],
+          "explanation": "ref返回的是一个包装对象，需要通过.value属性来访问或修改其值。在模板中会自动解包。"
+        },
+        {
+          "id": "q2-2-3",
+          "type": "boolean",
+          "question": "reactive和ref都可以用来创建响应式数据。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "reactive用于创建响应式对象，ref用于创建响应式的基本类型值或对象，两者都是Vue 3的响应式API。"
+        },
+        {
+          "id": "q2-2-4",
+          "type": "multiple",
+          "question": "以下哪些是Vue 3响应式系统的特点？",
+          "options": [
+            { "id": "A", "text": "基于Proxy实现" },
+            { "id": "B", "text": "可以监听动态添加的属性" },
+            { "id": "C", "text": "可以监听数组索引和length" },
+            { "id": "D", "text": "需要递归遍历对象属性" }
+          ],
+          "answer": ["A", "B", "C"],
+          "explanation": "Vue 3的Proxy-based响应式系统可以监听动态添加的属性、数组索引和length变化，且不需要递归遍历对象属性（懒代理）。"
+        },
+        {
+          "id": "q2-2-5",
+          "type": "single",
+          "question": "computed和watch的主要区别是什么？",
+          "options": [
+            { "id": "A", "text": "computed有缓存，watch没有" },
+            { "id": "B", "text": "watch有缓存，computed没有" },
+            { "id": "C", "text": "两者没有区别" },
+            { "id": "D", "text": "computed用于异步操作" }
+          ],
+          "answer": ["A"],
+          "explanation": "computed计算属性有缓存机制，只有依赖变化时才重新计算；watch用于监听数据变化并执行副作用，没有缓存。"
+        }
+      ],
+      "ch3": [
+        {
+          "id": "q2-3-1",
+          "type": "single",
+          "question": "虚拟DOM的主要优势是什么？",
+          "options": [
+            { "id": "A", "text": "减少内存使用" },
+            { "id": "B", "text": "提高开发效率" },
+            { "id": "C", "text": "减少直接操作DOM的次数" },
+            { "id": "D", "text": "简化代码逻辑" }
+          ],
+          "answer": ["C"],
+          "explanation": "虚拟DOM通过在内存中比较新旧虚拟DOM树的差异（Diff），只更新实际需要改变的部分，减少直接操作DOM的次数。"
+        },
+        {
+          "id": "q2-3-2",
+          "type": "single",
+          "question": "Vue的Diff算法采用什么策略？",
+          "options": [
+            { "id": "A", "text": "深度优先" },
+            { "id": "B", "text": "广度优先" },
+            { "id": "C", "text": "同层比较" },
+            { "id": "D", "text": "随机比较" }
+          ],
+          "answer": ["C"],
+          "explanation": "Vue的Diff算法采用同层比较策略，只比较同一层级的节点，不跨层级比较，以提高比较效率。"
+        },
+        {
+          "id": "q2-3-3",
+          "type": "boolean",
+          "question": "key属性在列表渲染中用于帮助Vue识别节点的身份。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "key属性用于给Vue一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素。"
+        },
+        {
+          "id": "q2-3-4",
+          "type": "multiple",
+          "question": "以下哪些是虚拟DOM的优点？",
+          "options": [
+            { "id": "A", "text": "跨平台能力" },
+            { "id": "B", "text": "批量更新" },
+            { "id": "C", "text": "声明式UI" },
+            { "id": "D", "text": "无需学习DOM API" }
+          ],
+          "answer": ["A", "B", "C", "D"],
+          "explanation": "虚拟DOM提供了跨平台能力（可以渲染到不同平台）、批量更新（减少DOM操作次数）、声明式UI（开发者只需描述UI状态），并且屏蔽了底层DOM API的复杂性。"
+        },
+        {
+          "id": "q2-3-5",
+          "type": "single",
+          "question": "patch函数的作用是什么？",
+          "options": [
+            { "id": "A", "text": "创建虚拟DOM" },
+            { "id": "B", "text": "比较新旧虚拟DOM并更新真实DOM" },
+            { "id": "C", "text": "编译模板" },
+            { "id": "D", "text": "处理事件绑定" }
+          ],
+          "answer": ["B"],
+          "explanation": "patch函数是虚拟DOM的核心，负责比较新旧虚拟DOM树的差异，并将差异应用到真实DOM上。"
+        }
+      ],
+      "ch4": [
+        {
+          "id": "q2-4-1",
+          "type": "single",
+          "question": "Vue组件的data为什么必须是函数？",
+          "options": [
+            { "id": "A", "text": "为了代码规范" },
+            { "id": "B", "text": "为了每个组件实例有独立的数据副本" },
+            { "id": "C", "text": "为了提高性能" },
+            { "id": "D", "text": "为了支持TypeScript" }
+          ],
+          "answer": ["B"],
+          "explanation": "data必须是函数，这样每次创建组件实例时都会调用该函数返回一个新的数据对象，确保每个组件实例有独立的数据副本。"
+        },
+        {
+          "id": "q2-4-2",
+          "type": "single",
+          "question": "父子组件通信，父组件向子组件传递数据使用什么？",
+          "options": [
+            { "id": "A", "text": "events" },
+            { "id": "B", "text": "props" },
+            { "id": "C", "text": "slots" },
+            { "id": "D", "text": "refs" }
+          ],
+          "answer": ["B"],
+          "explanation": "父组件通过props向子组件传递数据，子组件通过events（$emit）向父组件发送消息。"
+        },
+        {
+          "id": "q2-4-3",
+          "type": "boolean",
+          "question": "Vue组件的mounted钩子函数在服务器端渲染时也会被调用。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["B"],
+          "explanation": "mounted钩子只在客户端执行，服务器端渲染时不会调用mounted，因为服务器端没有DOM。"
+        },
+        {
+          "id": "q2-4-4",
+          "type": "multiple",
+          "question": "以下哪些是Vue组件的生命周期钩子？",
+          "options": [
+            { "id": "A", "text": "created" },
+            { "id": "B", "text": "mounted" },
+            { "id": "C", "text": "updated" },
+            { "id": "D", "text": "destroyed" }
+          ],
+          "answer": ["A", "B", "C"],
+          "explanation": "created、mounted、updated都是Vue的生命周期钩子。Vue 3中destroyed被重命名为unmounted，但destroyed在Vue 2中存在。"
+        },
+        {
+          "id": "q2-4-5",
+          "type": "single",
+          "question": "provide/inject主要用于什么场景？",
+          "options": [
+            { "id": "A", "text": "父子组件通信" },
+            { "id": "B", "text": "跨层级组件通信" },
+            { "id": "C", "text": "兄弟组件通信" },
+            { "id": "D", "text": "全局状态管理" }
+          ],
+          "answer": ["B"],
+          "explanation": "provide/inject用于祖先组件向后代组件传递数据，适用于跨多层级的组件通信场景。"
+        }
+      ]
+    },
+    "3": {
+      "ch1": [
+        {
+          "id": "q3-1-1",
+          "type": "single",
+          "question": "TypeScript是什么？",
+          "options": [
+            { "id": "A", "text": "一种新的编程语言" },
+            { "id": "B", "text": "JavaScript的超集" },
+            { "id": "C", "text": "JavaScript的替代品" },
+            { "id": "D", "text": "一种编译器" }
+          ],
+          "answer": ["B"],
+          "explanation": "TypeScript是JavaScript的超集，它在JavaScript的基础上添加了类型系统和其他特性，最终会被编译为JavaScript。"
+        },
+        {
+          "id": "q3-1-2",
+          "type": "single",
+          "question": "TypeScript文件的后缀名是什么？",
+          "options": [
+            { "id": "A", "text": ".js" },
+            { "id": "B", "text": ".ts" },
+            { "id": "C", "text": ".tsx" },
+            { "id": "D", "text": ".jsx" }
+          ],
+          "answer": ["B"],
+          "explanation": "TypeScript文件使用.ts后缀，包含JSX的TypeScript文件使用.tsx后缀。"
+        },
+        {
+          "id": "q3-1-3",
+          "type": "boolean",
+          "question": "TypeScript代码可以直接在浏览器中运行。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["B"],
+          "explanation": "TypeScript代码需要先编译为JavaScript才能在浏览器中运行，浏览器不能直接执行TypeScript。"
+        },
+        {
+          "id": "q3-1-4",
+          "type": "multiple",
+          "question": "TypeScript相比JavaScript的优势有哪些？",
+          "options": [
+            { "id": "A", "text": "静态类型检查" },
+            { "id": "B", "text": "更好的IDE支持" },
+            { "id": "C", "text": "更易于重构" },
+            { "id": "D", "text": "运行速度更快" }
+          ],
+          "answer": ["A", "B", "C"],
+          "explanation": "TypeScript提供静态类型检查、更好的IDE支持（代码提示、跳转等）、更易于重构。但编译后的JavaScript运行速度与原生JavaScript相同。"
+        },
+        {
+          "id": "q3-1-5",
+          "type": "single",
+          "question": "tsconfig.json文件的作用是什么？",
+          "options": [
+            { "id": "A", "text": "定义TypeScript的类型" },
+            { "id": "B", "text": "配置TypeScript编译器选项" },
+            { "id": "C", "text": "存储项目依赖" },
+            { "id": "D", "text": "定义模块路径" }
+          ],
+          "answer": ["B"],
+          "explanation": "tsconfig.json用于配置TypeScript编译器的选项，如编译目标版本、模块系统、严格模式等。"
+        }
+      ],
+      "ch2": [
+        {
+          "id": "q3-2-1",
+          "type": "single",
+          "question": "interface和type关键字的主要区别是什么？",
+          "options": [
+            { "id": "A", "text": "interface可以合并，type不行" },
+            { "id": "B", "text": "type可以定义基本类型别名，interface不行" },
+            { "id": "C", "text": "两者没有区别" },
+            { "id": "D", "text": "A和B都正确" }
+          ],
+          "answer": ["D"],
+          "explanation": "interface支持声明合并（多个同名interface会自动合并），type可以定义基本类型别名（如type MyString = string），interface不行。"
+        },
+        {
+          "id": "q3-2-2",
+          "type": "single",
+          "question": "以下哪个语法用于定义可选属性？",
+          "options": [
+            { "id": "A", "text": "name: string" },
+            { "id": "B", "text": "name?: string" },
+            { "id": "C", "text": "name!: string" },
+            { "id": "D", "text": "name: string?" }
+          ],
+          "answer": ["B"],
+          "explanation": "在属性名后加?表示该属性是可选的，如name?: string表示name属性可以不存在。"
+        },
+        {
+          "id": "q3-2-3",
+          "type": "boolean",
+          "question": "interface可以继承其他interface。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "interface支持继承，使用extends关键字可以继承其他interface的属性。"
+        },
+        {
+          "id": "q3-2-4",
+          "type": "multiple",
+          "question": "以下哪些是有效的类型定义方式？",
+          "options": [
+            { "id": "A", "text": "type Point = { x: number; y: number }" },
+            { "id": "B", "text": "interface Point { x: number; y: number }" },
+            { "id": "C", "text": "type ID = string | number" },
+            { "id": "D", "text": "interface ID = string | number" }
+          ],
+          "answer": ["A", "B", "C"],
+          "explanation": "A、B、C都是有效的类型定义。D是错误的，interface不能用于联合类型，应该使用type。"
+        },
+        {
+          "id": "q3-2-5",
+          "type": "single",
+          "question": "readonly修饰符的作用是什么？",
+          "options": [
+            { "id": "A", "text": "只能在构造函数中赋值" },
+            { "id": "B", "text": "属性只能在创建时赋值，之后不能修改" },
+            { "id": "C", "text": "属性是私有的" },
+            { "id": "D", "text": "属性是静态的" }
+          ],
+          "answer": ["B"],
+          "explanation": "readonly修饰符表示属性只能在对象创建时赋值，之后不能重新赋值。"
+        }
+      ],
+      "ch3": [
+        {
+          "id": "q3-3-1",
+          "type": "single",
+          "question": "泛型的主要作用是什么？",
+          "options": [
+            { "id": "A", "text": "提高代码运行速度" },
+            { "id": "B", "text": "创建可重用的组件" },
+            { "id": "C", "text": "减少代码量" },
+            { "id": "D", "text": "优化内存使用" }
+          ],
+          "answer": ["B"],
+          "explanation": "泛型允许我们创建可以适用于多种类型的可重用组件，同时保持类型安全。"
+        },
+        {
+          "id": "q3-3-2",
+          "type": "single",
+          "question": "以下哪个是正确的泛型函数定义？",
+          "options": [
+            { "id": "A", "text": "function identity<T>(arg: T): T" },
+            { "id": "B", "text": "function identity(arg: T)<T>: T" },
+            { "id": "C", "text": "function identity<T>(arg: T): any" },
+            { "id": "D", "text": "function identity(arg: any): T" }
+          ],
+          "answer": ["A"],
+          "explanation": "泛型函数在函数名后使用<T>声明类型参数，参数和返回值都可以使用这个类型参数。"
+        },
+        {
+          "id": "q3-3-3",
+          "type": "boolean",
+          "question": "泛型类型参数可以有默认值。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["A"],
+          "explanation": "TypeScript 2.3起，泛型类型参数可以指定默认值，如<T = string>。"
+        },
+        {
+          "id": "q3-3-4",
+          "type": "multiple",
+          "question": "以下哪些是泛型约束的用法？",
+          "options": [
+            { "id": "A", "text": "<T extends string>" },
+            { "id": "B", "text": "<T implements interface>" },
+            { "id": "C", "text": "<T extends { length: number }>" },
+            { "id": "D", "text": "<T = string>" }
+          ],
+          "answer": ["A", "C"],
+          "explanation": "使用extends关键字可以对泛型进行约束，如<T extends string>或<T extends { length: number }>。implements不是有效的泛型约束关键字，=用于默认值。"
+        },
+        {
+          "id": "q3-3-5",
+          "type": "single",
+          "question": "keyof操作符的作用是什么？",
+          "options": [
+            { "id": "A", "text": "获取对象的值类型" },
+            { "id": "B", "text": "获取对象的键的联合类型" },
+            { "id": "C", "text": "遍历对象的键" },
+            { "id": "D", "text": "删除对象的键" }
+          ],
+          "answer": ["B"],
+          "explanation": "keyof操作符用于获取对象类型的所有键的联合类型，如keyof { a: number, b: string }得到'a' | 'b'。"
+        }
+      ],
+      "ch4": [
+        {
+          "id": "q3-4-1",
+          "type": "single",
+          "question": "TypeScript的类型推断是指什么？",
+          "options": [
+            { "id": "A", "text": "手动指定变量类型" },
+            { "id": "B", "text": "编译器自动推断变量类型" },
+            { "id": "C", "text": "运行时推断类型" },
+            { "id": "D", "text": "从JavaScript迁移类型" }
+          ],
+          "answer": ["B"],
+          "explanation": "类型推断是指TypeScript编译器在没有显式类型注解的情况下，根据上下文自动推断变量类型的能力。"
+        },
+        {
+          "id": "q3-4-2",
+          "type": "single",
+          "question": "typeof类型操作符在类型上下文中返回什么？",
+          "options": [
+            { "id": "A", "text": "字符串类型的值" },
+            { "id": "B", "text": "值的类型" },
+            { "id": "C", "text": "布尔值" },
+            { "id": "D", "text": "undefined" }
+          ],
+          "answer": ["B"],
+          "explanation": "在类型上下文中（如type X = typeof variable），typeof返回的是值的类型，而不是字符串。"
+        },
+        {
+          "id": "q3-4-3",
+          "type": "boolean",
+          "question": "类型保护（Type Guards）可以在运行时检查类型。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["B"],
+          "explanation": "类型保护是在编译时进行的类型检查，TypeScript的类型在编译后会被擦除，运行时没有类型信息。"
+        },
+        {
+          "id": "q3-4-4",
+          "type": "multiple",
+          "question": "以下哪些是TypeScript的类型保护方式？",
+          "options": [
+            { "id": "A", "text": "typeof" },
+            { "id": "B", "text": "instanceof" },
+            { "id": "C", "text": "in" },
+            { "id": "D", "text": "自定义类型保护函数" }
+          ],
+          "answer": ["A", "B", "C", "D"],
+          "explanation": "TypeScript支持多种类型保护方式：typeof用于基本类型检查，instanceof用于类实例检查，in用于属性存在检查，还可以自定义返回类型谓词的函数作为类型保护。"
+        },
+        {
+          "id": "q3-4-5",
+          "type": "single",
+          "question": "以下代码中，isString是什么？\n\n```typescript\nfunction isString(value: unknown): value is string {\n  return typeof value === 'string';\n}\n```",
+          "options": [
+            { "id": "A", "text": "类型转换函数" },
+            { "id": "B", "text": "类型保护函数" },
+            { "id": "C", "text": "泛型函数" },
+            { "id": "D", "text": "构造函数" }
+          ],
+          "answer": ["B"],
+          "explanation": "这是一个自定义类型保护函数，返回类型谓词value is string，用于在条件块中缩小类型范围。"
+        }
+      ],
+      "ch5": [
+        {
+          "id": "q3-5-1",
+          "type": "single",
+          "question": "装饰器（Decorator）是一种什么？",
+          "options": [
+            { "id": "A", "text": "设计模式" },
+            { "id": "B", "text": "特殊的函数" },
+            { "id": "C", "text": "A和B都正确" },
+            { "id": "D", "text": "编译器插件" }
+          ],
+          "answer": ["C"],
+          "explanation": "装饰器既是一种设计模式，也是TypeScript中的一种特殊函数，用于修改类、方法、属性等的行为。"
+        },
+        {
+          "id": "q3-5-2",
+          "type": "single",
+          "question": "要在TypeScript中使用装饰器，需要在tsconfig.json中启用哪个选项？",
+          "options": [
+            { "id": "A", "text": "experimentalDecorators" },
+            { "id": "B", "text": "emitDecoratorMetadata" },
+            { "id": "C", "text": "decorators" },
+            { "id": "D", "text": "enableDecorators" }
+          ],
+          "answer": ["A"],
+          "explanation": "需要在tsconfig.json中设置experimentalDecorators: true来启用装饰器支持。"
+        },
+        {
+          "id": "q3-5-3",
+          "type": "boolean",
+          "question": "装饰器在编译后的JavaScript代码中仍然存在。",
+          "options": [
+            { "id": "A", "text": "正确" },
+            { "id": "B", "text": "错误" }
+          ],
+          "answer": ["B"],
+          "explanation": "装饰器是实验性特性，编译后会转换为普通的函数调用，不会作为特殊的语法保留。"
+        },
+        {
+          "id": "q3-5-4",
+          "type": "multiple",
+          "question": "TypeScript支持哪些类型的装饰器？",
+          "options": [
+            { "id": "A", "text": "类装饰器" },
+            { "id": "B", "text": "方法装饰器" },
+            { "id": "C", "text": "属性装饰器" },
+            { "id": "D", "text": "参数装饰器" }
+          ],
+          "answer": ["A", "B", "C", "D"],
+          "explanation": "TypeScript支持多种装饰器：类装饰器、方法装饰器、属性装饰器、参数装饰器以及访问器装饰器。"
+        },
+        {
+          "id": "q3-5-5",
+          "type": "single",
+          "question": "Reflect Metadata API的作用是什么？",
+          "options": [
+            { "id": "A", "text": "反射调用函数" },
+            { "id": "B", "text": "在运行时存储和读取元数据" },
+            { "id": "C", "text": "创建代理对象" },
+            { "id": "D", "text": "类型检查" }
+          ],
+          "answer": ["B"],
+          "explanation": "Reflect Metadata API用于在运行时存储和读取元数据，常与装饰器配合使用，如定义路由、依赖注入等。"
+        }
+      ]
+    }
+  }
+}

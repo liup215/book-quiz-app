@@ -1,0 +1,290 @@
+{
+  "bookId": "book2",
+  "chapters": {
+    "ch1": [
+      {
+        "id": "b2c1q1",
+        "type": "single",
+        "question": "Vue.js 3相比Vue.js 2最大的架构变化是什么？",
+        "options": [
+          "使用了TypeScript",
+          "使用了Proxy替代Object.defineProperty",
+          "使用了虚拟DOM",
+          "使用了单文件组件"
+        ],
+        "answer": 1,
+        "explanation": "Vue 3使用Proxy替代了Vue 2中的Object.defineProperty来实现响应式系统，这是最大的架构变化。"
+      },
+      {
+        "id": "b2c1q2",
+        "type": "boolean",
+        "question": "Vue 3的Composition API是为了替代Options API而设计的。",
+        "options": ["正确", "错误"],
+        "answer": 1,
+        "explanation": "Composition API不是为了替代Options API，而是作为补充。两种API可以共存，开发者可以根据需求选择。"
+      },
+      {
+        "id": "b2c1q3",
+        "type": "single",
+        "question": "以下哪个不是Vue 3的性能优化特性？",
+        "options": [
+          "静态提升",
+          "PatchFlag",
+          "Tree-shaking支持",
+          "双向数据绑定"
+        ],
+        "answer": 3,
+        "explanation": "双向数据绑定是Vue 2就有的特性，不是Vue 3新增的优化。Vue 3的优化包括静态提升、PatchFlag、更好的Tree-shaking支持等。"
+      },
+      {
+        "id": "b2c1q4",
+        "type": "multiple",
+        "question": "Vue 3的响应式系统使用了哪些ES6特性？（多选）",
+        "options": ["Proxy", "Reflect", "Map", "Set"],
+        "answer": [0, 1],
+        "explanation": "Vue 3的响应式系统主要使用了Proxy和Reflect这两个ES6特性来实现对对象的代理和反射操作。"
+      },
+      {
+        "id": "b2c1q5",
+        "type": "single",
+        "question": "Vue 3的模板编译器会将模板编译成什么？",
+        "options": [
+          "HTML字符串",
+          "渲染函数（render function）",
+          "JavaScript类",
+          "CSS样式"
+        ],
+        "answer": 1,
+        "explanation": "Vue 3的编译器会将模板编译成渲染函数（render function），渲染函数返回虚拟DOM。"
+      }
+    ],
+    "ch2": [
+      {
+        "id": "b2c2q1",
+        "type": "single",
+        "question": "在Vue 3的响应式系统中，reactive和ref的主要区别是什么？",
+        "options": [
+          "reactive用于对象，ref用于基本类型",
+          "reactive是深响应式，ref是浅响应式",
+          "reactive返回代理对象，ref返回包装对象",
+          "以上都是"
+        ],
+        "answer": 3,
+        "explanation": "以上都是正确的区别。reactive用于创建对象的响应式代理，ref用于创建包装对象（可用于基本类型），访问ref需要通过.value。"
+      },
+      {
+        "id": "b2c2q2",
+        "type": "boolean",
+        "question": "Vue 3的响应式系统可以检测到对象属性的添加和删除。",
+        "options": ["正确", "错误"],
+        "answer": 0,
+        "explanation": "这是正确的。使用Proxy实现的响应式系统可以拦截对象属性的添加、删除等操作，而Vue 2使用Object.defineProperty则无法做到。"
+      },
+      {
+        "id": "b2c2q3",
+        "type": "single",
+        "question": "computed和watch的主要区别是什么？",
+        "options": [
+          "computed有缓存，watch没有",
+          "computed用于计算属性，watch用于监听变化",
+          "computed是同步的，watch可以是异步的",
+          "以上都是"
+        ],
+        "answer": 3,
+        "explanation": "以上都是正确的区别。computed具有缓存特性，适合计算派生数据；watch用于监听数据变化并执行副作用。"
+      },
+      {
+        "id": "b2c2q4",
+        "type": "multiple",
+        "question": "以下哪些是Vue 3响应式系统的核心API？（多选）",
+        "options": ["reactive", "ref", "computed", "watch", "watchEffect"],
+        "answer": [0, 1, 2, 3, 4],
+        "explanation": "这些都是Vue 3响应式系统的核心API：reactive和ref用于创建响应式数据，computed用于计算属性，watch和watchEffect用于监听。"
+      },
+      {
+        "id": "b2c2q5",
+        "type": "single",
+        "question": "effect函数在Vue 3响应式系统中的作用是什么？",
+        "options": [
+          "创建副作用",
+          "收集依赖并执行副作用",
+          "触发更新",
+          "创建响应式数据"
+        ],
+        "answer": 1,
+        "explanation": "effect函数用于创建一个副作用函数，它会自动收集其内部访问的响应式数据的依赖，并在依赖变化时重新执行。"
+      },
+      {
+        "id": "b2c2q6",
+        "type": "boolean",
+        "question": "在Vue 3中，shallowReactive和shallowRef创建的是浅层响应式对象。",
+        "options": ["正确", "错误"],
+        "answer": 0,
+        "explanation": "这是正确的。shallowReactive和shallowRef只使对象的第一层属性具有响应性，嵌套对象不会自动转为响应式。"
+      },
+      {
+        "id": "b2c2q7",
+        "type": "single",
+        "question": "toRefs函数的作用是什么？",
+        "options": [
+          "将对象转为ref",
+          "将reactive对象的属性转为ref",
+          "创建多个ref",
+          "合并多个ref"
+        ],
+        "answer": 1,
+        "explanation": "toRefs用于将一个reactive对象的每个属性转换为ref，这样在解构时不会丢失响应性。"
+      },
+      {
+        "id": "b2c2q8",
+        "type": "multiple",
+        "question": "以下哪些操作会触发Vue 3的依赖收集？（多选）",
+        "options": [
+          "在effect中访问响应式数据",
+          "在computed中访问响应式数据",
+          "在模板中访问响应式数据",
+          "在普通函数中访问响应式数据"
+        ],
+        "answer": [0, 1, 2],
+        "explanation": "在effect、computed、模板（会编译为渲染函数）中访问响应式数据会触发依赖收集。普通函数不会触发依赖收集。"
+      }
+    ],
+    "ch3": [
+      {
+        "id": "b2c3q1",
+        "type": "single",
+        "question": "Vue 3的虚拟DOM使用什么数据结构表示？",
+        "options": [
+          "DOM节点",
+          "JavaScript对象（VNode）",
+          "HTML字符串",
+          "JSON"
+        ],
+        "answer": 1,
+        "explanation": "虚拟DOM使用JavaScript对象（VNode）来表示真实DOM的结构，包含标签名、属性、子节点等信息。"
+      },
+      {
+        "id": "b2c3q2",
+        "type": "boolean",
+        "question": "Vue 3的Diff算法采用双端比较策略来提高性能。",
+        "options": ["正确", "错误"],
+        "answer": 0,
+        "explanation": "这是正确的。Vue 3的Diff算法使用双端比较（从新旧子节点的两端同时比较）来减少DOM操作次数。"
+      },
+      {
+        "id": "b2c3q3",
+        "type": "single",
+        "question": "PatchFlag的作用是什么？",
+        "options": [
+          "标记需要更新的节点",
+          "标记节点的类型",
+          "标记节点的优先级",
+          "标记节点的层级"
+        ],
+        "answer": 0,
+        "explanation": "PatchFlag用于标记VNode中哪些部分可能会动态变化，在Diff算法中只比较标记的部分，跳过静态内容。"
+      },
+      {
+        "id": "b2c3q4",
+        "type": "multiple",
+        "question": "以下哪些是Vue 3渲染器的核心函数？（多选）",
+        "options": ["render", "patch", "mount", "unmount"],
+        "answer": [0, 1, 2, 3],
+        "explanation": "这些都是渲染器的核心函数：render是入口函数，patch用于对比和更新，mount用于挂载，unmount用于卸载。"
+      },
+      {
+        "id": "b2c3q5",
+        "type": "single",
+        "question": "静态提升（Static Hoisting）的作用是什么？",
+        "options": [
+          "提升静态节点的创建",
+          "提升组件的加载速度",
+          "提升渲染性能",
+          "提升内存使用效率"
+        ],
+        "answer": 0,
+        "explanation": "静态提升会将模板中的静态节点提升到渲染函数外部，只创建一次，避免每次渲染都重新创建。"
+      },
+      {
+        "id": "b2c3q6",
+        "type": "boolean",
+        "question": "Vue 3的渲染器是平台无关的，可以用于非DOM环境（如Weex、小程序）。",
+        "options": ["正确", "错误"],
+        "answer": 0,
+        "explanation": "这是正确的。Vue 3的渲染器是平台无关的，通过自定义节点操作API，可以渲染到不同的平台。"
+      }
+    ],
+    "ch4": [
+      {
+        "id": "b2c4q1",
+        "type": "single",
+        "question": "Vue 3中，组件的setup函数在什么时候执行？",
+        "options": [
+          "组件创建之前",
+          "组件创建之后，渲染之前",
+          "组件渲染之后",
+          "组件销毁时"
+        ],
+        "answer": 1,
+        "explanation": "setup函数在组件实例创建之后、渲染之前执行，此时props已经解析，但组件还未挂载。"
+      },
+      {
+        "id": "b2c4q2",
+        "type": "boolean",
+        "question": "在setup函数中，this指向组件实例。",
+        "options": ["正确", "错误"],
+        "answer": 1,
+        "explanation": "这是错误的。在setup函数中，this不是指向组件实例，而是undefined。setup函数接收props和context作为参数。"
+      },
+      {
+        "id": "b2c4q3",
+        "type": "single",
+        "question": "defineProps和defineEmits是做什么用的？",
+        "options": [
+          "定义组件的属性和事件",
+          "定义组件的状态和方法",
+          "定义组件的生命周期",
+          "定义组件的样式"
+        ],
+        "answer": 0,
+        "explanation": "defineProps用于声明组件的props，defineEmits用于声明组件可以触发的事件，它们是编译器宏，不需要导入。"
+      },
+      {
+        "id": "b2c4q4",
+        "type": "multiple",
+        "question": "以下哪些是Vue 3组件的生命周期钩子？（多选）",
+        "options": [
+          "onBeforeMount",
+          "onMounted",
+          "onBeforeUpdate",
+          "onUpdated",
+          "onBeforeUnmount",
+          "onUnmounted"
+        ],
+        "answer": [0, 1, 2, 3, 4, 5],
+        "explanation": "这些都是Vue 3 Composition API中的生命周期钩子，需要在setup函数中导入使用。"
+      },
+      {
+        "id": "b2c4q5",
+        "type": "single",
+        "question": "provide和inject主要用于什么场景？",
+        "options": [
+          "父子组件通信",
+          "跨层级组件通信",
+          "兄弟组件通信",
+          "全局状态管理"
+        ],
+        "answer": 1,
+        "explanation": "provide和inject用于跨层级组件通信，祖先组件通过provide提供数据，后代组件通过inject注入数据。"
+      },
+      {
+        "id": "b2c4q6",
+        "type": "boolean",
+        "question": "Vue 3的Teleport组件可以将组件渲染到DOM的其他位置。",
+        "options": ["正确", "错误"],
+        "answer": 0,
+        "explanation": "这是正确的。Teleport组件可以将组件的内容渲染到DOM中的其他位置，常用于模态框、通知等场景。"
+      }
+    ]
+  }
+}
