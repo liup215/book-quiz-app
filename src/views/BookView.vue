@@ -8,7 +8,7 @@ const route = useRoute()
 const router = useRouter()
 const book = ref<Book | null>(null)
 
-const bookId = computed(() => route.params.id as string || '')
+const bookId = computed(() => (route.params.id as string) || '')
 
 onMounted(() => {
   const foundBook = booksData.find((b: Book) => b.id === bookId.value)
@@ -22,7 +22,10 @@ function goBack() {
 }
 
 function startQuiz(chapterId: string) {
-  router.push(`/quiz/${bookId.value}/${chapterId}`)
+  const id = bookId.value
+  if (id) {
+    router.push(`/quiz/${id}/${chapterId}`)
+  }
 }
 
 function getChapterIcon(index: number): string {
