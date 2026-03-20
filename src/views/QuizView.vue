@@ -32,7 +32,8 @@ const allQuestionsAnswered = computed(() => {
 onMounted(async () => {
   try {
     const questionsData = await import(`@/data/questions/${bookId.value}.json`)
-    questions.value = questionsData.default.chapters[chapterId.value] || []
+    const bookData = questionsData.default[bookId.value] || questionsData.default
+    questions.value = bookData[chapterId.value] || []
     
     if (questions.value.length > 0) {
       quizStore.startQuiz(bookId.value, chapterId.value, questions.value)
