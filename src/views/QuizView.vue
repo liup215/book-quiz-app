@@ -66,8 +66,8 @@ function isCorrectOption(optionIndex: number): boolean {
   const question = currentQuestion.value
   if (!question) return false
   
-  const correctAnswer = Array.isArray(question.answer) ? question.answer : [question.answer]
-  return correctAnswer.includes(optionIndex)
+  const optionLetter = String.fromCharCode(65 + optionIndex)
+  return question.answer.some(a => a === optionLetter)
 }
 
 function getOptionClass(optionIndex: number): string {
@@ -374,7 +374,7 @@ function formatTime(seconds: number): string {
               :class="[
                 quizStore.currentQuestionIndex === index
                   ? 'bg-indigo-600 text-white'
-                  : quizStore.answers[index.toString()]?.length > 0
+                  : (quizStore.answers[index] || []).length > 0
                     ? 'bg-green-100 text-green-700 hover:bg-green-200'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               ]"
