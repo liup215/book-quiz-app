@@ -8,7 +8,7 @@ const route = useRoute()
 const router = useRouter()
 const book = ref<Book | null>(null)
 
-const bookId = computed(() => (route.params.id as string) || '')
+const bookId = computed((): string => (route.params.id as string) || '')
 
 onMounted(() => {
   const foundBook = booksData.find((b: Book) => b.id === bookId.value)
@@ -29,8 +29,8 @@ function startQuiz(chapterId: string) {
 }
 
 function getChapterIcon(index: number): string {
-  const icons = ['📖', '📚', '📝', '🔍', '💡', '🎯', '🎓', '🏆']
-  return icons[index % icons.length]
+  const icons: string[] = ['📖', '📚', '📝', '🔍', '💡', '🎯', '🎓', '🏆']
+  return icons[index % icons.length] || '📖'
 }
 </script>
 

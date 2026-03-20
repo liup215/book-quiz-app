@@ -66,10 +66,8 @@ function isCorrectOption(optionIndex: number): boolean {
   const question = currentQuestion.value
   if (!question) return false
   
-  return question.answer.some(a => {
-    const idx = typeof a === 'string' ? a.charCodeAt(0) - 'A'.charCodeAt(0) : a
-    return idx === optionIndex
-  })
+  const correctAnswer = Array.isArray(question.answer) ? question.answer : [question.answer]
+  return correctAnswer.includes(optionIndex)
 }
 
 function getOptionClass(optionIndex: number): string {
@@ -289,7 +287,7 @@ function formatTime(seconds: number): string {
               >
                 {{ ['A', 'B', 'C', 'D', 'E', 'F'][index] }}
               </span>
-              <span class="flex-1">{{ typeof option === 'string' ? option : option.text }}</span>
+              <span class="flex-1">{{ option }}</span>
               <span v-if="showExplanation && isCorrectOption(index)" class="ml-2 text-green-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
@@ -376,7 +374,7 @@ function formatTime(seconds: number): string {
               :class="[
                 quizStore.currentQuestionIndex === index
                   ? 'bg-indigo-600 text-white'
-                  : quizStore.answers[index]?.length && quizStore.answers[index]!.length > 0
+                  : quizStore.answers[index.toString()]?.length > 0
                     ? 'bg-green-100 text-green-700 hover:bg-green-200'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
               ]"
