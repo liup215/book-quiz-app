@@ -1,0 +1,75 @@
+[
+  {
+    "id": "preface-1",
+    "type": "single",
+    "question": "《原子习惯》的作者是谁？",
+    "options": [
+      {
+        "id": "A",
+        "text": "Charles Duhigg"
+      },
+      {
+        "id": "B",
+        "text": "James Clear"
+      },
+      {
+        "id": "C",
+        "text": "Daniel Kahneman"
+      },
+      {
+        "id": "D",
+        "text": "Cal Newport"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "《原子习惯》(Atomic Habits) 是由 James Clear（詹姆斯·克利尔）所著。"
+  },
+  {
+    "id": "preface-2",
+    "type": "single",
+    "question": "书中提到的核心概念是？",
+    "options": [
+      {
+        "id": "A",
+        "text": "意志力决定一切"
+      },
+      {
+        "id": "B",
+        "text": "微小进步带来巨大改变"
+      },
+      {
+        "id": "C",
+        "text": "天赋比努力更重要"
+      },
+      {
+        "id": "D",
+        "text": "环境对习惯没有影响"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "本书的核心概念是：每天进步1%，一年后你会进步37倍。"
+  },
+  {
+    "id": "preface-3",
+    "type": "boolean",
+    "question": "作者认为改变习惯的关键在于设定目标。",
+    "options": [
+      {
+        "id": "A",
+        "text": "正确"
+      },
+      {
+        "id": "B",
+        "text": "错误"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "explanation": "作者认为，改变习惯的关键不在于设定目标，而在于建立系统。"
+  }
+]
