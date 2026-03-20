@@ -28,7 +28,7 @@ export const useQuizStore = defineStore('quiz', () => {
 
   const currentQuestion = computed<Question | null>(() => {
     if (currentQuestions.value.length === 0) return null
-    return currentQuestions.value[currentQuestionIndex.value]
+    return currentQuestions.value[currentQuestionIndex.value] || null
   })
 
   const currentAnswer = computed<number[]>(() => {

@@ -8,7 +8,7 @@ const route = useRoute()
 const router = useRouter()
 const book = ref<Book | null>(null)
 
-const bookId = computed(() => route.params.id as string)
+const bookId = computed(() => route.params.id as string || '')
 
 onMounted(() => {
   const foundBook = booksData.find((b: Book) => b.id === bookId.value)
