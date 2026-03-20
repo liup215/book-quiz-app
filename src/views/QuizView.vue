@@ -72,7 +72,7 @@ function isCorrectOption(optionIndex: number): boolean {
 }
 
 function getOptionClass(optionIndex: number): string {
-  const baseClass = 'w-full p-4 rounded-xl border-2 text-left transition-all duration-200 flex items-start'
+  const baseClass = 'w-full p-4 rounded-xl border-2 text-left transition-all duration-300 flex items-start hover:shadow-md hover:border-indigo-300'
   
   if (!showExplanation.value) {
     // 答题中状态
@@ -185,12 +185,12 @@ function formatTime(seconds: number): string {
     </header>
 
     <!-- Main Content -->
-    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <!-- Quiz Result -->
       <div v-if="quizStore.isFinished && quizStore.quizResult" class="mb-8">
         <div class="bg-white rounded-2xl shadow-lg p-8">
           <div class="text-center mb-6">
-            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-4"
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6"
               :class="quizStore.quizResult.score >= 80 ? 'bg-green-100' : quizStore.quizResult.score >= 60 ? 'bg-yellow-100' : 'bg-red-100'"
             >
               <span class="text-3xl font-bold"
@@ -205,7 +205,7 @@ function formatTime(seconds: number): string {
             </p>
           </div>
           
-          <div class="grid grid-cols-3 gap-4 mb-6">
+          <div class="grid grid-cols-3 gap-4 mb-8">
             <div class="text-center p-4 bg-gray-50 rounded-xl">
               <p class="text-2xl font-bold text-gray-900">{{ quizStore.quizResult.totalQuestions }}</p>
               <p class="text-sm text-gray-500">总题数</p>
@@ -220,7 +220,7 @@ function formatTime(seconds: number): string {
             </div>
           </div>
           
-          <div class="flex gap-4">
+          <div class="flex gap-4 mt-8">
             <button
               @click="restartQuiz"
               class="flex-1 px-6 py-3 bg-indigo-600 text-white font-medium rounded-xl hover:bg-indigo-700 transition-colors"
@@ -240,7 +240,7 @@ function formatTime(seconds: number): string {
       <!-- Quiz Content -->
       <div v-else-if="questions.length > 0">
         <!-- Progress Bar -->
-        <div class="bg-white rounded-xl shadow-md p-4 mb-6">
+        <div class="bg-white rounded-xl shadow-md p-4 mb-8">
           <div class="flex items-center justify-between mb-2">
             <span class="text-sm font-medium text-gray-700">
               进度 {{ quizStore.progress.current }}/{{ quizStore.progress.total }}
@@ -258,24 +258,24 @@ function formatTime(seconds: number): string {
         </div>
 
         <!-- Question Card -->
-        <div v-if="currentQuestion" class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+        <div v-if="currentQuestion" class="bg-white rounded-2xl shadow-lg p-6 mb-8">
           <!-- Question Header -->
           <div class="flex items-start justify-between mb-6">
             <div>
               <span
-                class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-2"
+                class="inline-block px-3 py-1 rounded-full text-xs font-medium mb-3"
                 :class="getQuestionTypeClass(currentQuestion.type)"
               >
                 {{ getQuestionTypeLabel(currentQuestion.type) }}
               </span>
-              <h2 class="text-lg font-semibold text-gray-900 leading-relaxed">
+              <h2 class="text-lg font-semibold text-gray-900 leading-relaxed mb-6">
                 {{ quizStore.currentQuestionIndex + 1 }}. {{ currentQuestion.question }}
               </h2>
             </div>
           </div>
 
           <!-- Options -->
-          <div class="space-y-3">
+          <div class="space-y-4">
             <button
               v-for="(option, index) in currentQuestion.options"
               :key="index"
@@ -303,7 +303,7 @@ function formatTime(seconds: number): string {
           </div>
 
           <!-- Explanation -->
-          <div v-if="showExplanation" class="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
+          <div v-if="showExplanation" class="mt-8 p-4 bg-blue-50 rounded-xl border border-blue-200">
             <h3 class="font-semibold text-blue-900 mb-2 flex items-center">
               <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -315,7 +315,7 @@ function formatTime(seconds: number): string {
         </div>
 
         <!-- Navigation -->
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-between mt-8">
           <button
             @click="prevQuestion"
             :disabled="isFirstQuestion"
@@ -364,9 +364,9 @@ function formatTime(seconds: number): string {
         </div>
 
         <!-- Question Navigator -->
-        <div class="mt-8 bg-white rounded-xl shadow-md p-4">
-          <h3 class="text-sm font-medium text-gray-700 mb-3">题目导航</h3>
-          <div class="flex flex-wrap gap-2">
+        <div class="mt-10 bg-white rounded-xl shadow-md p-4">
+          <h3 class="text-sm font-medium text-gray-700 mb-4">题目导航</h3>
+          <div class="flex flex-wrap gap-3">
             <button
               v-for="(_, index) in questions"
               :key="index"
