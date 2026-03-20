@@ -288,7 +288,7 @@ function formatTime(seconds: number): string {
               >
                 {{ ['A', 'B', 'C', 'D', 'E', 'F'][index] }}
               </span>
-              <span class="flex-1">{{ option }}</span>
+              <span class="flex-1">{{ typeof option === 'object' && option !== null ? option.text : option }}</span>
               <span v-if="showExplanation && isCorrectOption(index)" class="ml-2 text-green-600">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
