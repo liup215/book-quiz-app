@@ -1,31 +1,54 @@
-# Book Quiz App Project Brief
+# 项目概述
 
-## Project Overview
-The Book Quiz App is an interactive web application designed to help users study books through chapter-based quizzes. The app allows users to browse available books, view detailed book information, select specific chapters, and take quizzes with immediate feedback and explanations.
+## 书籍章节测验应用
 
-## Core Purpose
-- Enable users to test their knowledge of book content through interactive quizzes
-- Provide immediate feedback with detailed explanations for each question
-- Support multiple question types (single choice, multiple choice, true/false)
-- Create an engaging learning experience that reinforces book comprehension
+### 项目目标
 
-## Target Users
-- Students studying educational materials
-- Book club members wanting to test their understanding
-- Self-learners using books as primary learning resources
-- Anyone wanting to reinforce their knowledge of book content
+为《原子习惯》等书籍生成章节测验题目，帮助读者通过测验加深对书籍内容的理解和记忆。
 
-## Key Requirements
-- Responsive web interface that works on desktop and mobile devices
-- Intuitive navigation between books, chapters, and quiz questions
-- Real-time answer validation and feedback
-- Progress tracking during quizzes
-- Comprehensive quiz results with score, time spent, and accuracy metrics
-- Support for multiple books and chapters with scalable data structure
+### 核心功能
 
-## Success Criteria
-- Users can easily navigate through the app and find books/chapters
-- Quizzes function correctly with proper answer validation
-- Performance is smooth even with large question sets
-- User interface is intuitive and accessible
-- The app successfully helps users retain and understand book content
+1. **章节内容分析**
+   - 解析书籍章节结构
+   - 提取关键概念和知识点
+   - 识别重要段落和主题
+
+2. **自动生成测验题目**
+   - 基于章节内容自动生成选择题、判断题
+   - 支持多种题型和难度级别
+   - 确保题目质量与内容相关性
+
+3. **题目展示和作答**
+   - 清晰的题目展示界面
+   - 支持单选、多选等作答方式
+   - 实时答题状态反馈
+
+4. **答案解析和评分**
+   - 自动评分系统
+   - 详细的答案解析
+   - 学习进度追踪
+
+### 技术栈
+
+- **前端框架**: Vue 3 + Vite + TypeScript
+- **状态管理**: Pinia
+- **路由**: Vue Router
+- **样式**: Tailwind CSS
+- **部署**: GitHub Pages
+
+### 数据来源
+
+- 书籍章节内容（以《原子习惯》为初始数据源）
+- 通过 AI 模型分析生成测验题目
+
+### 目标用户
+
+- 阅读《原子习惯》的读者
+- 希望通过测验巩固学习效果的学习者
+- 教育工作者（可作为教学辅助工具）
+
+### 成功指标
+
+- 测验题目准确反映章节核心内容
+- 用户体验流畅，界面友好
+- 答题结果准确，解析清晰有帮助
